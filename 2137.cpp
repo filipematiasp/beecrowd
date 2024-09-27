@@ -1,28 +1,22 @@
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
 
 using namespace std;
 
 int main(){
-    int qtd, cod[1000], n;
+    int qtd, cod[1000];
 
     while(cin >> qtd){
-        for (size_t i = 0; i < qtd; i++){
-           cin >> cod[i];
+        for (int i = 0; i < qtd; i++){
+            cin >> cod[i];
         }
 
-        n = sizeof(cod) / sizeof(cod[0]);
+        sort(cod, cod + qtd);
 
-        sort(cod, cod + n);
-
-        cout << sizeof(cod) / sizeof(cod[0]);
-
-        // for (size_t i = 0; i < sizeof(cod); i++){
-        //     /* code */
-        // }
-        
-                
-        
+        for(int i = 0; i < qtd; i++){
+            cout << setw(4) << setfill('0') << cod[i] << endl;
+        }
 
     }
 
